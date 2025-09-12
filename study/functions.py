@@ -25,7 +25,7 @@ describe_city("Curitiba")
 
 """
 
-
+"""
 def city_country(city, country):
     return f"{city.title()}, {country.title()}"
 
@@ -61,3 +61,41 @@ while flag != "q":
         print(make_album(album_list[0], album_list[1]))
     else:
         print(make_album(album_list[0], album_list[1], album_list[2]))
+
+"""
+"""
+messages = ["Python is nice","I enjoy fishing","I love burguers"]
+def show_messages(msg):
+    for x in msg:
+        print(x)
+show_messages(messages)
+sent_messages = []
+
+def send_messages(msg, sent_msg):
+    for x in msg[:]:
+        print(x)
+        sent_msg.append(x)
+        msg.remove(x)
+send_messages(messages, sent_messages)
+
+print(sent_messages)
+print(messages)
+"""
+
+def sandwiches(*ingredients):
+    print("Sandwich with:")
+    for ingredient in ingredients:
+        print(f"- {ingredient}")
+
+sandwiches("Cream", "Cookies")
+sandwiches("Cheese", "Ham", "Eggs", "Bacon")
+sandwiches("Tomato")
+
+def make_car(manufacturer, model, **car_info):
+    car_info["manufacturer"] = manufacturer
+    car_info["model"] = model
+    return car_info
+
+car = make_car("Mercedes", "SL 63", color="Blue", twowd = True)
+
+print(car)
